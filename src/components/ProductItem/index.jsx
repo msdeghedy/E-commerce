@@ -26,9 +26,9 @@ function ProductItem({ productObj: { title, description, image, price, id } }) {
         style={{ maxHeight: "200px", overflow: "scroll" }}
         className="border-bottom"
       >
-        <Card.Title className="text-light bg-dark p-3">{title}</Card.Title>
+        <Card.Title className="fs-6">{title}</Card.Title>
         <Card.Text className="fw-bold fs-3">${price}</Card.Text>
-        <Card.Text>{description}</Card.Text>
+        <Card.Text className="fs-6">{description}</Card.Text>
       </Card.Body>
 
       <Card.Body>

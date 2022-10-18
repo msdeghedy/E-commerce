@@ -14,7 +14,7 @@ export const cartSlice = createSlice({
         state.cartItems.filter((item) => item.id === action.payload.id).length >
         0
       ) {
-        alert("ITEM ALREADY ADDED! CHECK YOUR CART FOR INCREASING QUANTITY.");
+        alert("Item already added, check your cart for increasing quantity.");
         return;
       }
 

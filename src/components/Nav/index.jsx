@@ -6,7 +6,7 @@ function Nav() {
   let cartCount = useSelector((state) => state.cartSlice.cartCounter);
 
   return (
-    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark mb-5">
+    <nav class="navbar navbar-expand-lg  navbar-light bg-light mb-5">
       <div class="container">
         <Link class="navbar-brand fw-bold" href="#">
           E - COMMERCE
