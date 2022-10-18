@@ -26,7 +26,7 @@ function Home() {
     <div className="d-flex flex-wrap justify-content-between container">
       {products.map((product) => {
         return (
-          <div key={`${product.id}`}>
+          <div key={`${product.id}`} className="w-25 p-2">
             <ProductItem productObj={product} />
           </div>
         );

@@ -8,11 +8,14 @@ function CounterActions({ increaseVal, decreaseVal }) {
   const decreaseCount = () => dispatch(decrementCount());
   return (
     <div>
-      <button onClick={increaseCount} className="btn btn-success btn-lg me-5">
-        +
+      <button
+        onClick={increaseCount}
+        className="btn btn-light btn-lg me-5 fs-1"
+      >
+        Increment +
       </button>
-      <button onClick={decreaseCount} className="btn btn-danger btn-lg">
-        -
+      <button onClick={decreaseCount} className="btn btn-dark btn-lg fs-1">
+        Decrement -
       </button>
     </div>
   );

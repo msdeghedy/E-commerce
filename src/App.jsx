@@ -7,10 +7,14 @@ import Cart from "./components/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductDetails from "./components/ProductDetails";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 function App() {
   return (
     <BrowserRouter>
+      <Helmet>
+        <style>{"body { background-color: #f8f9fa; }"}</style>
+      </Helmet>
       <Nav></Nav>
 
       <Routes>

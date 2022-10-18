@@ -4,6 +4,10 @@ import { useParams } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
+
+import "./ProductDetails.css";
 
 function ProductDetails() {
   const [product, setProduct] = useState(null);
@@ -16,6 +20,12 @@ function ProductDetails() {
       .then((json) => setProduct(json));
   });
 
+  const dispatch = useDispatch();
+
+  const addItem = () => {
+    dispatch(addToCart(product));
+  };
+
   if (!product) {
     return (
       <div className="container vh-100 d-flex justify-content-center align-items-center">
@@ -26,21 +36,30 @@ function ProductDetails() {
     );
   }
   return (
-    <Card
-      style={{ width: "18rem", marginBottom: "30px" }}
-      className="container d-flex justify-content-center"
-    >
-      <Card.Img variant="top" src={product.image} style={{ height: "300px" }} />
-      <Card.Body>
-        <Card.Title>{product.title}</Card.Title>
-        <Card.Text>{product.description}</Card.Text>
-        <Card.Text className="fw-bold fs-3">$ {product.price}</Card.Text>
-      </Card.Body>
+    <div className="container d-flex align-items-center bg-light">
+      <div className="product-img">
+        <img src={product.image} className="w-100 img-height" />
+      </div>
 
-      <Card.Body>
-        <Card.Link href="#">Add To Cart</Card.Link>
-      </Card.Body>
-    </Card>
+      <div className="text-wrapper">
+        <p className="mb-3 fw-bold ">{product.title}</p>
+        <p className="mb-4 fw-bold border-bottom border-3 text-danger fst-italic fs-1">
+          ${product.price}{" "}
+          <span className="text-decoration-line-through text-muted fs-5">
+            $1000
+          </span>
+        </p>
+        <p className="mb-5">{product.description}</p>
+
+        <a
+          href="#"
+          className="btn btn-secondary w-100 fw-bold"
+          onClick={addItem}
+        >
+          Add To Cart
+        </a>
+      </div>
+    </div>
   );
 }
 

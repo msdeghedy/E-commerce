@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import "./Nav.css";
 
 function Nav() {
   let cartCount = useSelector((state) => state.cartSlice.cartCounter);
 
   return (
-    <nav class="navbar navbar-expand-lg bg-light mb-5">
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark mb-5">
       <div class="container">
         <Link class="navbar-brand fw-bold" href="#">
           E - COMMERCE

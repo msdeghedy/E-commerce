@@ -10,8 +10,15 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      state.cartCounter = state.cartCounter + 1;
+      if (
+        state.cartItems.filter((item) => item.id === action.payload.id).length >
+        0
+      ) {
+        alert("ITEM ALREADY ADDED! CHECK YOUR CART FOR INCREASING QUANTITY.");
+        return;
+      }
 
+      state.cartCounter = state.cartCounter + 1;
       state.cartItems.push(action.payload);
     },
     removeFromCart: (state, action) => {
