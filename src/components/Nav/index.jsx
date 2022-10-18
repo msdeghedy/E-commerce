@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
-function Nav({ cartCount }) {
+function Nav() {
+  let cartCount = useSelector((state) => state.cartSlice.cartCounter);
+
   return (
     <nav class="navbar navbar-expand-lg bg-light mb-5">
       <div class="container">

@@ -3,7 +3,7 @@ import { useState } from "react";
 import ProductItem from "../ProductItem";
 import Spinner from "react-bootstrap/Spinner";
 
-function Home({ incrementCount, decrementCount }) {
+function Home() {
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
@@ -26,12 +26,8 @@ function Home({ incrementCount, decrementCount }) {
     <div className="d-flex flex-wrap justify-content-between container">
       {products.map((product) => {
         return (
-          <div>
-            <ProductItem
-              productObj={product}
-              incrementCount={incrementCount}
-              decrementCount={decrementCount}
-            />
+          <div key={`${product.id}`}>
+            <ProductItem productObj={product} />
           </div>
         );
       })}
