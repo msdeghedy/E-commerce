@@ -7,23 +7,7 @@ function CartItem({ product }) {
 
   const handleRemoveItem = () => dispatch(removeFromCart(product));
   return (
-    // <tr className="text-center">
-    //   <td className="border w-25">
-    //     <img src={product.image} className="w-25" />
-    //   </td>
-    //   <td className="border fw-bold text-center fs-3">${product.price}</td>
-    //   <td className="border w-25">
-    //     <button
-    //       type="button"
-    //       className="btn btn-danger w-100 h-100 d-block"
-    //       onClick={handleRemoveItem}
-    //     >
-    //       Remove
-    //     </button>
-    //   </td>
-    // </tr>
-
-    <div className="container d-flex align-items-center bg-light mb-3">
+    <div className="container d-flex  bg-light mb-3">
       <img src={product.image} className="product-pic" />
 
       <div className="text-wrapper">
@@ -34,14 +18,15 @@ function CartItem({ product }) {
             $1000
           </span>
         </p>
-        <button
-          type="button"
-          className="btn btn-danger  d-block"
-          onClick={handleRemoveItem}
-        >
-          Remove
-        </button>
       </div>
+
+      <button
+        type="button"
+        className="btn btn-danger  d-block"
+        onClick={handleRemoveItem}
+      >
+        Remove
+      </button>
     </div>
   );
 }

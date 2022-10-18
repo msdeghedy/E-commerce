@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "./Nav.css";
+import { FaShoppingCart } from "react-icons/fa";
 
 function Nav() {
   let cartCount = useSelector((state) => state.cartSlice.cartCounter);
@@ -36,7 +37,7 @@ function Nav() {
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/cart">
-                Cart({cartCount})
+                <FaShoppingCart /> [{cartCount}]
               </Link>
             </li>
           </ul>

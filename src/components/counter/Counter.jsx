@@ -7,7 +7,7 @@ function Counter() {
   const globalState = useSelector((state) => state.counter.counter);
 
   return (
-    <div className="container w-50 mx-auto  d-flex vh-100 justify-content-center align-items-center flex-column ">
+    <div className="container w-50 mx-auto  d-flex empty-cart-height justify-content-center align-items-center flex-column ">
       <div className=" fw-bold mb-5 value">{globalState}</div>
       <CounterActions />
     </div>
