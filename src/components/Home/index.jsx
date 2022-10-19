@@ -2,17 +2,21 @@ import { useEffect } from "react";
 import { useState } from "react";
 import ProductItem from "../ProductItem";
 import Spinner from "react-bootstrap/Spinner";
+import { getProducts } from "../../redux/productsSlice";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 function Home() {
-  const [products, setProducts] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => setProducts(json));
+    dispatch(getProducts());
   }, []);
 
-  if (!products) {
+  const products = useSelector((store) => store.productsSlice.productsList);
+  console.log(products);
+  const loadingSpinner = useSelector((store) => store.productsSlice.loading);
+  if (loadingSpinner) {
     return (
       <div className="container vh-100 d-flex justify-content-center align-items-center">
         <Spinner animation="border" role="status">

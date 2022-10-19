@@ -22,7 +22,7 @@ function CartItem({ product }) {
 
       <button
         type="button"
-        className="btn btn-danger  d-block"
+        className="btn btn-danger  d-block ms-auto"
         onClick={handleRemoveItem}
       >
         Remove
