@@ -1,6 +1,8 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import Select from "react-select";
 
 function Signup() {
   const {
@@ -10,13 +12,44 @@ function Signup() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+  const onSubmit = (data) => {};
+
+  const options = [
+    {
+      value: 1,
+      label: "Male",
+    },
+    {
+      value: 2,
+      label: "Female",
+    },
+  ];
+  const multiOptions = [
+    {
+      value: 1,
+      label: "Accessories",
+    },
+    {
+      value: 2,
+      label: "Electronics",
+    },
+    {
+      value: 3,
+      label: "Makeup",
+    },
+    {
+      value: 4,
+      label: "Men's Shoes",
+    },
+    {
+      value: 5,
+      label: "Men's Clothes",
+    },
+  ];
 
   return (
-    <div className="h-100 d-flex justify-content-center container">
-      <Form onSubmit={handleSubmit(onSubmit)} className="w-100">
+    <div className="h-100 d-flex justify-content-center container flex-wrap">
+      <Form onSubmit={handleSubmit(onSubmit)} className="w-100 mb-3">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label className="fw-bold">Full Name</Form.Label>
           <Form.Control
@@ -74,6 +107,17 @@ function Signup() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label className="fw-bold">Gender </Form.Label>
+
+          <Select options={options} className="mb-3" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label className="fw-bold">Interests </Form.Label>
+
+          <Select options={multiOptions} className="mb-3" isMulti />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label className="fw-bold">Password</Form.Label>
           <Form.Control
             type="password"
@@ -89,9 +133,9 @@ function Signup() {
           )}
           {errors?.password?.type === "pattern" && (
             <Form.Text className="text-danger">
-              password should be formatted like: At least 1 Uppercase /At least
-              1 Lowercase / At least 1 Number / At least 1 Symbol, symbol
-              allowed -- !@#$%^&*_=+- / Min 8 chars and Max 12 chars
+              password should be formatted like: At least 1 Uppercase /1
+              Lowercase / 1 Number / 1 Symbol, symbol allowed -- !@#$%^&*_=+- /
+              Min 8 chars and Max 12 chars
             </Form.Text>
           )}
         </Form.Group>
@@ -116,15 +160,19 @@ function Signup() {
           {errors?.confirmPass?.type === "validate" && (
             <Form.Text className="text-danger">
               {" "}
-              Passwords don't matched
+              Passwords don't match
             </Form.Text>
           )}
         </Form.Group>
 
-        <Button variant="primary" type="submit" className="w-100">
+        <Button variant="secondary" type="submit" className="w-100">
           SignUp
         </Button>
       </Form>
+
+      <div className="w-100 text-center fw-bold ">
+        Already have account? <Link to="/signup">Signin</Link>
+      </div>
     </div>
   );
 }

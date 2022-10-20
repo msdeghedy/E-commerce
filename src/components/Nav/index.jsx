@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import "./Nav.css";
 import { FaShoppingCart } from "react-icons/fa";
 
@@ -26,7 +26,7 @@ function Nav() {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <Link class="nav-link active" aria-current="page" to="/">
+              <Link class="nav-link" aria-current="page" to="/">
                 Home
               </Link>
             </li>
@@ -38,6 +38,11 @@ function Nav() {
             <li class="nav-item">
               <Link class="nav-link" to="/signup">
                 Signup
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/signin">
+                Signin
               </Link>
             </li>
             <li class="nav-item">

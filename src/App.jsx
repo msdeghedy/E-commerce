@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Counter from "./components/counter/Counter";
 import Home from "./components/Home";
@@ -8,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductDetails from "./components/ProductDetails";
 import NotFound from "./components/NotFound";
 import Signup from "./components/Auth/Signup";
+import Signin from "./components/Auth/Signin";
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
         <Route path="/details/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
