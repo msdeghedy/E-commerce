@@ -49,6 +49,11 @@ function Signup() {
 
   return (
     <div className="h-100 d-flex justify-content-center container flex-wrap">
+      <div className="w-100 text-center fw-bold bg-info p-3 mb-3 text-light">
+        Already have account? <Link to="/signup">Sign In</Link>
+      </div>
+
+      <h1 className="border-bottom w-100 mb-5">Sign Up Form</h1>
       <Form onSubmit={handleSubmit(onSubmit)} className="w-100 mb-3">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label className="fw-bold">Full Name</Form.Label>
@@ -169,10 +174,6 @@ function Signup() {
           SignUp
         </Button>
       </Form>
-
-      <div className="w-100 text-center fw-bold ">
-        Already have account? <Link to="/signup">Signin</Link>
-      </div>
     </div>
   );
 }

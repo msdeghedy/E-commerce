@@ -26,27 +26,32 @@ function Nav() {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <Link class="nav-link" aria-current="page" to="/">
+              <Link
+                class="nav-link"
+                aria-current="page"
+                to="/"
+                activeClassName="is-active"
+              >
                 Home
               </Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" to="/counter">
+              <Link class="nav-link" to="/counter" activeClassName="is-active">
                 Counter
               </Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" to="/signup">
-                Signup
+              <Link class="nav-link" to="/signup" activeClassName="is-active">
+                Sign Up
               </Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" to="/signin">
-                Signin
+              <Link class="nav-link" to="/signin" activeClassName="is-active">
+                Sign In
               </Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" to="/cart">
+              <Link class="nav-link" to="/cart" activeClassName="is-active">
                 <FaShoppingCart /> [{cartCount}]
               </Link>
             </li>
