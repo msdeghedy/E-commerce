@@ -1,5 +1,4 @@
 import "./App.css";
-import Counter from "./components/counter/Counter";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
 import Cart from "./components/Cart";
@@ -16,7 +15,6 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/counter" element={<Counter />} />
         <Route path="/details/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/signup" element={<Signup />} />

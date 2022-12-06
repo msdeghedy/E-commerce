@@ -35,11 +35,7 @@ function Nav() {
                 Home
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/counter" activeClassName="is-active">
-                Counter
-              </Link>
-            </li>
+
             <li class="nav-item">
               <Link class="nav-link" to="/signup" activeClassName="is-active">
                 Sign Up
