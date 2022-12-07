@@ -1,9 +1,10 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Signin() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -11,7 +12,9 @@ function Signin() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {};
+  const onSubmit = (data) => {
+    navigate("/");
+  };
 
   return (
     <div className="h-100 d-flex justify-content-center container flex-wrap">

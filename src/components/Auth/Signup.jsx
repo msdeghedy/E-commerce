@@ -1,10 +1,11 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import Select from "react-select";
+import { Link, useNavigate } from "react-router-dom";
 
 function Signup() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -12,7 +13,10 @@ function Signup() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {};
+  const onSubmit = (data) => {
+    alert("Signed up successfully!");
+    navigate("/");
+  };
 
   const options = [
     {
@@ -49,8 +53,8 @@ function Signup() {
 
   return (
     <div className="h-100 d-flex justify-content-center container flex-wrap">
-      <div className="w-100 text-center fw-bold bg-info p-3 mb-3 text-light">
-        Already have account? <Link to="/signup">Sign In</Link>
+      <div className="w-100 text-center fw-bold  p-3 mb-3 ">
+        Already have an account? <Link to="/signin">Sign In</Link>
       </div>
 
       <h1 className="border-bottom w-100 mb-5">Sign Up Form</h1>
